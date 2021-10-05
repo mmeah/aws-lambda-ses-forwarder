@@ -3,6 +3,7 @@
 var AWS = require('aws-sdk');
 
 console.log("AWS Lambda SES Forwarder // @arithmetric // Version 5.0.0");
+console.log("Fork @mmeah // Version 1.0.0");
 
 // Configure the S3 bucket and key prefix for stored raw emails, and the
 // mapping of email addresses to forward from and to.
@@ -36,25 +37,15 @@ console.log("AWS Lambda SES Forwarder // @arithmetric // Version 5.0.0");
 //
 //   To match all email addresses matching no other mapping, use "@" as a key.
 var defaultConfig = {
-  fromEmail: "noreply@example.com",
+  fromEmail: "noreply@mmeah.com",
   subjectPrefix: "",
   emailBucket: "s3-bucket-name",
-  emailKeyPrefix: "emailsPrefix/",
+  emailKeyPrefix: "incoming/",
   allowPlusSign: true,
   forwardMapping: {
-    "info@example.com": [
-      "example.john@example.com",
-      "example.jen@example.com"
+    "@mmeah.com": [
+      "mmeah@gmail.com"
     ],
-    "abuse@example.com": [
-      "example.jim@example.com"
-    ],
-    "@example.com": [
-      "example.john@example.com"
-    ],
-    "info": [
-      "info@example.com"
-    ]
   }
 };
 
